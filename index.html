@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- custom styles to ensure page visibility -->
+  <!-- custom styles to ensure page visibility and filter functionality -->
   <style>
     .main-content article {
       display: none;
@@ -27,8 +27,34 @@
       display: block;
     }
     .navbar-link.active {
-      color: #007bff; /* Highlight active link */
+      color: #007bff;
       font-weight: bold;
+    }
+    .filter-item button.active {
+      background-color: #007bff;
+      color: white;
+    }
+    .project-item {
+      display: none;
+    }
+    .project-item.active {
+      display: block;
+    }
+    .filter-select-box {
+      position: relative;
+    }
+    .select-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid #ccc;
+      z-index: 10;
+    }
+    .select-list.active {
+      display: block;
     }
   </style>
 </head>
@@ -351,6 +377,31 @@
                 <p class="project-category">Applications</p>
               </a>
             </li>
+            <!-- Placeholder for Robotics and PCB projects -->
+            <li class="project-item" data-filter-item data-category="robotics">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/robotics-placeholder.jpg" alt="robotics project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Robotics Project</h3>
+                <p class="project-category">Robotics</p>
+              </a>
+            </li>
+            <li class="project-item" data-filter-item data-category="pcb">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/pcb-placeholder.jpg" alt="pcb project" loading="lazy">
+                </figure>
+                <h3 class="project-title">PCB Design</h3>
+                <p class="project-category">PCB</p>
+              </a>
+            </li>
           </ul>
         </section>
       </article>
@@ -411,6 +462,49 @@
     sidebarBtn.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
+
+    // Portfolio filter functionality
+    const filterBtns = document.querySelectorAll('[data-filter-btn]');
+    const selectItems = document.querySelectorAll('[data-select-item]');
+    const filterItems = document.querySelectorAll('[data-filter-item]');
+    const filterSelect = document.querySelector('[data-select]');
+    const selectValue = document.querySelector('[data-select-value]');
+    const selectList = document.querySelector('.select-list');
+
+    const filterFunc = (selectedValue) => {
+      filterItems.forEach(item => {
+        if (selectedValue === 'All' || selectedValue.toLowerCase() === item.dataset.category.toLowerCase()) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    };
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const selectedValue = btn.innerText;
+        filterFunc(selectedValue);
+      });
+    });
+
+    selectItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const selectedValue = item.innerText;
+        selectValue.innerText = selectedValue;
+        filterFunc(selectedValue);
+        selectList.classList.remove('active');
+      });
+    });
+
+    filterSelect.addEventListener('click', () => {
+      selectList.classList.toggle('active');
+    });
+
+    // Initialize portfolio to show all items
+    filterFunc('All');
   </script>
 
   <!-- ionicon link -->
