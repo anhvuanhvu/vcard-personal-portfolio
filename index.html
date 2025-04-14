@@ -26,13 +26,72 @@
     .main-content article.active {
       display: block;
     }
+    /* Navbar styling */
+    .navbar-list {
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      list-style: none;
+    }
+    .navbar-item {
+      position: relative;
+    }
+    .navbar-link {
+      background: none;
+      border: none;
+      padding: 5px 0;
+      cursor: pointer;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
     .navbar-link.active {
-      color: #007bff;
-      font-weight: bold;
+      color: #fff;
+      font-weight: 500;
+    }
+    .navbar-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #007bff;
+    }
+    /* Portfolio filter styling to match navbar */
+    .filter-list {
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      list-style: none;
+    }
+    .filter-item {
+      position: relative;
+    }
+    .filter-item button {
+      background: none;
+      border: none;
+      padding: 5px 0;
+      cursor: pointer;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
     }
     .filter-item button.active {
+      color: #fff;
+      font-weight: 500;
+    }
+    .filter-item button.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
       background-color: #007bff;
-      color: white;
     }
     .project-item {
       display: none;
@@ -55,6 +114,17 @@
     }
     .select-list.active {
       display: block;
+    }
+    .select-item button {
+      width: 100%;
+      text-align: left;
+      padding: 5px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .select-item button:hover {
+      background-color: #f0f0f0;
     }
   </style>
 </head>
@@ -167,9 +237,9 @@
           <ul class="service-list">
             <li class="service-item">
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title">App Developing</h4>
                 <p class="service-item-text">
-                  Expertise in developing applications for both iOS and Android platforms.
+                  Building robust and scalable applications for iOS and Android, focusing on seamless user experiences and efficient performance.
                 </p>
               </div>
             </li>
