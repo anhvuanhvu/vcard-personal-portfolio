@@ -399,10 +399,7 @@
         <section class="projects">
           <ul class="filter-list">
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>App Developing</button>
+              <button class="active" data-filter-btn>App Developing</button>
             </li>
             <li class="filter-item">
               <button data-filter-btn>Robotics</button>
@@ -419,9 +416,6 @@
               </div>
             </button>
             <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
               <li class="select-item">
                 <button data-select-item>App Developing</button>
               </li>
@@ -440,13 +434,13 @@
                 <h3 class="project-title">Tip Distribution & Management iOS App</h3>
               </a>
             </li>
-            <li class="project-item active" data-filter-item data-category="robotics">
+            <li class="project-item" data-filter-item data-category="robotics">
               <a href="https://github.com/anhvuanhvu/Control_System_Arduino">
                 <img src="./assets/images/battery.png" alt="Control System using Arduino" loading="lazy">
                 <h3 class="project-title">Control System using Arduino</h3>
               </a>
             </li>
-            <li class="project-item active" data-filter-item data-category="pcb">
+            <li class="project-item" data-filter-item data-category="pcb">
               <a href="https://github.com/anhvuanhvu/Dual-Adjustable-Power-Supply">
                 <img src="./assets/images/dual-adjustable-power-supply.jpg.png" alt="Dual Adjustable Power Supply with Multiple Output Levels" loading="lazy">
                 <h3 class="project-title">Dual Adjustable Power Supply with Multiple Output Levels</h3>
@@ -523,7 +517,7 @@
 
     const filterFunc = (selectedValue) => {
       filterItems.forEach(item => {
-        if (selectedValue === 'All' || selectedValue.toLowerCase() === item.dataset.category.toLowerCase()) {
+        if (selectedValue.toLowerCase() === item.dataset.category.toLowerCase()) {
           item.classList.add('active');
         } else {
           item.classList.remove('active');
@@ -553,8 +547,8 @@
       selectList.classList.toggle('active');
     });
 
-    // Initialize portfolio to show all items
-    filterFunc('All');
+    // Initialize portfolio to show "App Developing" items by default
+    filterFunc('App Developing');
   </script>
 
   <!-- ionicon link -->
