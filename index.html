@@ -99,6 +99,13 @@
     .project-item.active {
       display: block;
     }
+    .project-item a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .project-item h3 {
+      margin: 10px 0;
+    }
     .filter-select-box {
       position: relative;
     }
@@ -388,7 +395,7 @@
               <button class="active" data-filter-btn>All</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>App Developing</button>
             </li>
             <li class="filter-item">
               <button data-filter-btn>Robotics</button>
@@ -409,7 +416,7 @@
                 <button data-select-item>All</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item>App Developing</button>
               </li>
               <li class="select-item">
                 <button data-select-item>Robotics</button>
@@ -420,53 +427,19 @@
             </ul>
           </div>
           <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="applications">
+            <li class="project-item active" data-filter-item data-category="app developing">
               <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-                <h3 class="project-title">Brawlhalla</h3>
-                <p class="project-category">Applications</p>
+                <h3 class="project-title">Tip Distribution & Management iOS App</h3>
               </a>
             </li>
-            <li class="project-item active" data-filter-item data-category="applications">
+            <li class="project-item active" data-filter-item data-category="robotics">
               <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-                <h3 class="project-title">Task Manager</h3>
-                <p class="project-category">Applications</p>
+                <h3 class="project-title">Control System using Arduino</h3>
               </a>
             </li>
-            <!-- Placeholder for Robotics and PCB projects -->
-            <li class="project-item" data-filter-item data-category="robotics">
+            <li class="project-item active" data-filter-item data-category="pcb">
               <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/robotics-placeholder.jpg" alt="robotics project" loading="lazy">
-                </figure>
-                <h3 class="project-title">Robotics Project</h3>
-                <p class="project-category">Robotics</p>
-              </a>
-            </li>
-            <li class="project-item" data-filter-item data-category="pcb">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/pcb-placeholder.jpg" alt="pcb project" loading="lazy">
-                </figure>
-                <h3 class="project-title">PCB Design</h3>
-                <p class="project-category">PCB</p>
+                <h3 class="project-title">Dual Adjustable Power Supply with Multiple Output Levels</h3>
               </a>
             </li>
           </ul>
